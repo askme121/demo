@@ -5,7 +5,7 @@ $serv->set([
     'task_worker_num' => 3, //异步task工作进程
 ]);
 
-$server->on('receive', function($serv, $fd, $from_id, $data){
+$serv->on('receive', function($serv, $fd, $from_id, $data){
     var_dump($data);
     $task_id = $serv->task($data);
     echo "begin id=$task_id".PHP_EOL;
